@@ -246,7 +246,7 @@ function ValidateEnvironmentVariable {
         $Target
     )
 
-    GetEnvironmentVariable $Name $Target
+    GetEnvironmentVariable $Name $Target > $null
 }
 #endregion
 
