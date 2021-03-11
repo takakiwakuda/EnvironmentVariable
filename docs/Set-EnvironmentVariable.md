@@ -154,7 +154,7 @@ You can pipe a string that contains a name of environment variable to `Set-Envir
 
 ### System.Collections.Hashtable
 
-`Set-EnvironmentVariable` returns the `Hashtable` object that contains an environment variable name and it value.
+`Set-EnvironmentVariable` returns the hashtable object that contains an environment variable name and it value.
 
 ## NOTES
 

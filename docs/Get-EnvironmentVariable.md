@@ -126,7 +126,7 @@ You can pipe a string that contains a name of environment variable to `Get-Envir
 
 ### System.Collections.Hashtable
 
-`Get-EnvironmentVariable` returns the `Hashtable` objects that contains one or more environment variables names and their values.
+`Get-EnvironmentVariable` returns the hashtable objects that contains one or more environment variables names and their values.
 
 ## NOTES
 

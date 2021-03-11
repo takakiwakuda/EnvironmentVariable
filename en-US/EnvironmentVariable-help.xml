@@ -88,7 +88,7 @@
           <maml:name>System.Collections.Hashtable</maml:name>
         </dev:type>
         <maml:description>
-          <maml:para>`Get-EnvironmentVariable` returns the `Hashtable` objects that contains one or more environment variables names and their values.</maml:para>
+          <maml:para>`Get-EnvironmentVariable` returns the hashtable objects that contains one or more environment variables names and their values.</maml:para>
         </maml:description>
       </command:returnValue>
     </command:returnValues>
@@ -543,7 +543,7 @@ Temp                           C:\Users\Foo\AppData\Local\Temp</dev:code>
           <maml:name>System.Collections.Hashtable</maml:name>
         </dev:type>
         <maml:description>
-          <maml:para>`Set-EnvironmentVariable` returns the `Hashtable` object that contains an environment variable name and it value.</maml:para>
+          <maml:para>`Set-EnvironmentVariable` returns the hashtable object that contains an environment variable name and it value.</maml:para>
         </maml:description>
       </command:returnValue>
     </command:returnValues>
