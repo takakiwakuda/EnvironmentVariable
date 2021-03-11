@@ -42,7 +42,7 @@
             <maml:name>EnvironmentVariableTarget</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <dev:defaultValue>Process</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -69,13 +69,13 @@
           <maml:name>EnvironmentVariableTarget</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <dev:defaultValue>Process</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>System.String[]</maml:name>
+          <maml:name>System.String</maml:name>
         </dev:type>
         <maml:description>
           <maml:para>You can pipe a string that contains a name of environment variable to `Get-EnvironmentVariable`.</maml:para>
@@ -88,7 +88,7 @@
           <maml:name>System.Collections.Hashtable</maml:name>
         </dev:type>
         <maml:description>
-          <maml:para>`Get-EnvironmentVariable` returns the hashtable objects that contains one or more environment variables names and their values.</maml:para>
+          <maml:para>`Get-EnvironmentVariable` returns the `Hashtable` objects that contains one or more environment variables names and their values.</maml:para>
         </maml:description>
       </command:returnValue>
     </command:returnValues>
@@ -100,21 +100,51 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-EnvironmentVariable</dev:code>
+        <dev:code>PS C:\&gt; Get-EnvironmentVariable
+
+Name                           Value
+----                           -----
+CommonProgramW6432             C:\Program Files\Common Files
+PROMPT                         $P$G
+DriverData                     C:\Windows\System32\Drivers\DriverData
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+OneDriveConsumer               C:\Users\Foo\OneDrive
+USERDOMAIN                     Foo
+ProgramFiles                   C:\Program Files
+ProgramData                    C:\ProgramData
+USERPROFILE                    C:\Users\Foo
+...</dev:code>
         <dev:remarks>
           <maml:para>This example retrieves all environment variables.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-EnvironmentVariable -Name "P*"</dev:code>
+        <dev:code>PS C:\&gt; Get-EnvironmentVariable -Name "P*"
+
+Name                           Value
+----                           -----
+ProgramW6432                   C:\Program Files
+Path                           C:\Program Files\PowerShell\7;C:\Windows\System32;C:\Windows;C:\Windows\System32\Wbem;C…
+PSModulePath                   C:\Users\Foo\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;C:\Progr…
+ProgramFiles                   C:\Program Files
+ProgramFiles(x86)              C:\Program Files (x86)
+PUBLIC                         C:\Users\Public
+ProgramData                    C:\ProgramData
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROMPT                         $P$G
+PROCESSOR_ARCHITECTURE         AMD64</dev:code>
         <dev:remarks>
           <maml:para>This example retrieves environment variables whose names start with the character `P`.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 3 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-EnvironmentVariable -Name "Temp" -Target User</dev:code>
+        <dev:code>PS C:\&gt; Get-EnvironmentVariable -Name "Temp" -Target User
+
+Name                           Value
+----                           -----
+Temp                           C:\Users\Foo\AppData\Local\Temp</dev:code>
         <dev:remarks>
           <maml:para>This example retrieves a user environment variable with name `Temp`.</maml:para>
         </dev:remarks>
@@ -199,7 +229,7 @@
             <maml:name>EnvironmentVariableTarget</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <dev:defaultValue>Process</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
@@ -261,7 +291,7 @@
           <maml:name>EnvironmentVariableTarget</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <dev:defaultValue>Process</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
@@ -289,10 +319,10 @@
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Object</maml:name>
+          <maml:name>None</maml:name>
         </dev:type>
         <maml:description>
-          <maml:para>None</maml:para>
+          <maml:para></maml:para>
         </maml:description>
       </command:returnValue>
     </command:returnValues>
@@ -408,7 +438,7 @@
             <maml:name>EnvironmentVariableTarget</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <dev:defaultValue>Process</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
@@ -470,7 +500,7 @@
           <maml:name>EnvironmentVariableTarget</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <dev:defaultValue>Process</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
         <maml:name>Value</maml:name>
@@ -513,7 +543,7 @@
           <maml:name>System.Collections.Hashtable</maml:name>
         </dev:type>
         <maml:description>
-          <maml:para>`Set-EnvironmentVariable` returns the hashtable object that contains an environment variable name and it value.</maml:para>
+          <maml:para>`Set-EnvironmentVariable` returns the `Hashtable` object that contains an environment variable name and it value.</maml:para>
         </maml:description>
       </command:returnValue>
     </command:returnValues>
